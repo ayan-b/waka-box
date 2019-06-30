@@ -36,11 +36,12 @@ workflows:
   poll:
     triggers:
       - schedule:
-          # Run once every 5 minutes
-          cron: "0,15,30,45 * * * *"
+          # Run every day at 6 pm, 7 pm & 8 pm
+          cron: "0 18,19,20 * * *"
           filters:
             branches:
               only:
                 - master
     jobs:
       - wakabox
+
